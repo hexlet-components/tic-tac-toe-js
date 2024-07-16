@@ -21,4 +21,3 @@ test-preview:
 
 release:
 	npx release-it
-	npm publish
