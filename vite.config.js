@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(import.meta.dirname, 'src/lib.ts'),
+      entry: path.resolve(import.meta.dirname, 'src/index.ts'),
       name: 'TicTacToe',
     },
   },

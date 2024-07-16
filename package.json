@@ -1,8 +1,13 @@
 {
-  "name": "tic-tac-toe-js",
+  "name": "@hexlet/tic-tac-toe",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/tic-tac-toe.umd.cjs",
+  "module": "./dist/tic-tac-toe.js",
   "simple-git-hooks": {
     "pre-commit": "make lint",
     "pre-push": "make test"
@@ -24,6 +29,7 @@
     "@testing-library/user-event": "^14.5.2",
     "eslint": "^8.57.0",
     "globals": "^15.8.0",
+    "release-it": "^17.6.0",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.2.2",
     "typescript-eslint": "^7.16.1",

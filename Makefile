@@ -18,3 +18,7 @@ test-watch:
 
 test-preview:
 	npm run test-preview
+
+release:
+	npm run release
+	npx release-it
