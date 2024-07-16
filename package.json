@@ -1,6 +1,5 @@
 {
   "name": "@hexlet/tic-tac-toe",
-  "private": true,
   "version": "0.0.2",
   "type": "module",
   "files": [
