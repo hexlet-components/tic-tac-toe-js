@@ -1,8 +1,11 @@
-run:
+dev:
 	npm run dev
 
 build:
 	npm run build
+
+build-pages:
+	npm run build -- --config vite.pages.config.js
 
 test:
 	npm run test

@@ -1,5 +1,5 @@
 import { test, expect } from 'vitest'
-import { TicTacToe } from '../main.ts'
+import { TicTacToe } from '../lib.ts'
 import { screen } from '@testing-library/dom'
 import userEvent from '@testing-library/user-event'
 
