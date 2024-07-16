@@ -1,4 +1,3 @@
-import { debug } from 'vitest-preview'
 import { test, expect } from 'vitest'
 import { TicTacToe } from '../main.ts'
 import { screen } from '@testing-library/dom'

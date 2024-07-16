@@ -39,6 +39,9 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - run: make lint
+      - run: make test
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
