@@ -1,7 +1,9 @@
+import '@testing-library/jest-dom/vitest'
 import { test, expect } from 'vitest'
-import { TicTacToe } from '../index.ts'
 import { screen } from '@testing-library/dom'
 import userEvent from '@testing-library/user-event'
+
+import { TicTacToe } from '../src/index.js'
 
 const getCellByNumber = (n: number) => {
   const cellElement = document.querySelectorAll<HTMLDivElement>('.board__cell')[n - 1]

@@ -3,9 +3,10 @@
   "version": "0.0.3",
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "public"
   ],
-  "main": "./dist/tic-tac-toe.umd.cjs",
+  "main": "./dist/index.js",
   "module": "./dist/tic-tac-toe.js",
   "simple-git-hooks": {
     "pre-commit": "make lint",
@@ -16,7 +17,8 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test-preview": "vitest-preview",
-    "build": "tsc && vite build",
+    "build:pages": "vite build",
+    "build": "rm -rf dist && tsc",
     "preview": "vite preview"
   },
   "devDependencies": {

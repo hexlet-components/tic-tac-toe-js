@@ -37,7 +37,7 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
-      - run: npm run build -- --config vite.pages.config.js
+      - run: make build-pages
       - run: make lint
       - run: make test
 

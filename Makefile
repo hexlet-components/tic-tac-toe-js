@@ -5,7 +5,7 @@ build:
 	npm run build
 
 build-pages:
-	npm run build -- --config vite.pages.config.js
+	npm run build:pages
 
 test:
 	npm run test
