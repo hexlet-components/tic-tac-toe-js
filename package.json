@@ -3,15 +3,14 @@
   "version": "0.0.6",
   "type": "module",
   "files": [
-    "dist",
-    "public"
+    "dist"
   ],
   "exports": {
     ".": {
       "import": "./dist/index.js"
     },
-    "./public/": {
-      "import": "./public/"
+    "./public/*.css": {
+      "import": "./dist/public/*.css"
     }
   },
   "simple-git-hooks": {
@@ -24,7 +23,7 @@
     "test": "vitest run",
     "test-preview": "vitest-preview",
     "build:pages": "vite build",
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && tsc && cp -r public dist/",
     "preview": "vite preview"
   },
   "devDependencies": {
