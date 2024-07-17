@@ -6,8 +6,14 @@
     "dist",
     "public"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/tic-tac-toe.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./public/": {
+      "import": "./public/"
+    }
+  },
   "simple-git-hooks": {
     "pre-commit": "make lint",
     "pre-push": "make test"
