@@ -1,6 +1,6 @@
 // TODO: use xState
 
-import html from './html'
+import html from './html.js'
 
 class TicTacToe {
   rootElement: HTMLElement

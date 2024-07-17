@@ -1,5 +1,5 @@
 import '../public/style.css'
-import TicTacToe from './TicTacToe'
+import TicTacToe from './TicTacToe.js'
 
 const element = document.getElementById('tic-tac-toe')
 if (element) {
