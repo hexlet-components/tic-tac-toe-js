@@ -11,7 +11,7 @@
     "inlineSourceMap": true,
     "skipLibCheck": true,
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
