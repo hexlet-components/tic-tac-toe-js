@@ -5,16 +5,18 @@ import html from './html.js'
 class TicTacToe {
   rootElement: HTMLElement
   gameBoard = ['', '', '', '', '', '', '', '', '']
+  url: string | null
   turn = 0 // Keeps track if X or O player's turn
   winner = false
   playerX = { name: '' }
   playerY = { name: '' }
 
-  constructor(rootElement: HTMLElement) {
+  constructor(rootElement: HTMLElement, url: string | null = null) {
     this.rootElement = rootElement
+    this.url = url
   }
 
-  handleAddPlayers(event: SubmitEvent) {
+  async handleAddPlayers(event: SubmitEvent) {
     event.preventDefault()
 
     const formData = new FormData(event.target as HTMLFormElement)
@@ -27,6 +29,10 @@ class TicTacToe {
 
     this.playerX.name = name1
     this.playerY.name = name2
+
+    if (this.url) {
+      await fetch(this.url)
+    }
 
     const playerFormContainer = document.querySelector<HTMLDivElement>('.enter-players')
     const boardMain = document.querySelector<HTMLDivElement>('.board__main')
@@ -84,7 +90,7 @@ class TicTacToe {
     })
   }
 
-  handleMakeMove(event: Event) {
+  async handleMakeMove(event: Event) {
     // @ts-expect-error fix it
     const currentCell = parseInt(event.currentTarget!.firstElementChild!.dataset.id)
     const cellToAddToken = document.querySelector<HTMLElement>(`[data-id='${currentCell}']`)
@@ -108,7 +114,10 @@ class TicTacToe {
       }
     }
 
-    this.isWinner()
+    const result = this.checkAndUpdateWinner()
+    if (this.url && result) {
+      await fetch(this.url)
+    }
 
     this.turn++
 
@@ -121,7 +130,7 @@ class TicTacToe {
     }
   }
 
-  isWinner() {
+  checkAndUpdateWinner() {
     const winningSequences = [
       [0, 1, 2],
       [3, 4, 5],
@@ -177,6 +186,7 @@ class TicTacToe {
 
     if (!this.winner) {
       this.checkIfTie()
+      return false
     }
 
     return false
