@@ -114,11 +114,7 @@ class TicTacToe {
       }
     }
 
-    const result = this.checkAndUpdateWinner()
-    if (this.url && result) {
-      await fetch(this.url)
-    }
-
+    await this.checkAndUpdateWinner()
     this.turn++
 
     this.changeBoardHeaderNames()
@@ -130,7 +126,7 @@ class TicTacToe {
     }
   }
 
-  checkAndUpdateWinner() {
+  async checkAndUpdateWinner() {
     const winningSequences = [
       [0, 1, 2],
       [3, 4, 5],
@@ -142,7 +138,7 @@ class TicTacToe {
       [2, 4, 6],
     ]
 
-    winningSequences.forEach((winningCombos) => {
+    const promises = winningSequences.map(async (winningCombos) => {
       const cell1 = winningCombos[0]
       const cell2 = winningCombos[1]
       const cell3 = winningCombos[2]
@@ -151,6 +147,10 @@ class TicTacToe {
         && this.gameBoard[cell2] === this.currentPlayer()
         && this.gameBoard[cell3] === this.currentPlayer()
       ) {
+        if (this.url) {
+          await fetch(this.url)
+        }
+
         const cells = document.querySelectorAll<HTMLDivElement>('.board__cell')
 
         cells.forEach((cell) => {
@@ -163,33 +163,32 @@ class TicTacToe {
         })
 
         const currentPlayerText = document.querySelector<HTMLElement>('.board___player-turn')
+
+        this.winner = true
+        this.removeCellClickListener()
+
         if (this.currentPlayer() === 'X') {
           currentPlayerText!.innerHTML = `
           <div class="congratulations">Congratulations ${this.playerX.name}</div>
           <div class="u-r-winner">You are our winner!</div>
         `
-          this.winner = true
-          this.removeCellClickListener()
-          return true
         }
         else {
           currentPlayerText!.innerHTML = `
           <div class="congratulations">Congratulations ${this.playerY.name}</div>
           <div class="u-r-winner">You are our winner!</div>
         `
-          this.winner = true
-          this.removeCellClickListener()
-          return true
         }
+
+        return true
       }
     })
 
+    await Promise.all(promises)
+
     if (!this.winner) {
       this.checkIfTie()
-      return false
     }
-
-    return false
   }
 
   currentPlayer() {
