@@ -23,33 +23,33 @@ export default () => {
 
     <div class="board__container">
       <div class="board__cell">
-        <div class="letter" data-id="0"></div>
+        <div class="letter" data-id="0" data-testid="cell-1"></div>
       </div>
       <div class="board__cell">
-        <div class="letter" data-id="1"></div>
+        <div class="letter" data-id="1" data-testid="cell-2"></div>
       </div>
       <div class="board__cell">
-        <div class="letter" data-id="2"></div>
-      </div>
-
-      <div class="board__cell">
-        <div class="letter" data-id="3"></div>
-      </div>
-      <div class="board__cell">
-        <div class="letter" data-id="4"></div>
-      </div>
-      <div class="board__cell">
-        <div class="letter" data-id="5"></div>
+        <div class="letter" data-id="2" data-testid="cell-3"></div>
       </div>
 
       <div class="board__cell">
-        <div class="letter" data-id="6"></div>
+        <div class="letter" data-id="3" data-testid="cell-4"></div>
       </div>
       <div class="board__cell">
-        <div class="letter" data-id="7"></div>
+        <div class="letter" data-id="4" data-testid="cell-5"></div>
       </div>
       <div class="board__cell">
-        <div class="letter" data-id="8"></div>
+        <div class="letter" data-id="5" data-testid="cell-6"></div>
+      </div>
+
+      <div class="board__cell">
+        <div class="letter" data-id="6" data-testid="cell-7"></div>
+      </div>
+      <div class="board__cell">
+        <div class="letter" data-id="7" data-testid="cell-8"></div>
+      </div>
+      <div class="board__cell">
+        <div class="letter" data-id="8" data-testid="cell-9"></div>
       </div>
     </div>
   </div>
