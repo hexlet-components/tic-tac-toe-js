@@ -20,4 +20,4 @@ test-preview:
 	npm run test-preview
 
 release:
-	npx release-it --only-version
+	npx release-it
