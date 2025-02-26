@@ -23,7 +23,7 @@
     "test": "vitest run",
     "test-preview": "vitest-preview",
     "build:pages": "vite build",
-    "build": "rm -rf dist && tsc && cp -r public dist/",
+    "build": "rm -rf dist && tsc --build && cp -r public dist/",
     "preview": "vite preview"
   },
   "devDependencies": {
