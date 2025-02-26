@@ -20,8 +20,8 @@ class TicTacToe {
     event.preventDefault()
 
     const formData = new FormData(event.target as HTMLFormElement)
-    const name1 = String(formData.get('player1'))
-    const name2 = String(formData.get('player2'))
+    const name1 = formData.get('player1') as string
+    const name2 = formData.get('player2') as string
     if (name1 == '' || name2 == '') {
       alert('You Must Enter a Name for Each Field')
       return
@@ -77,7 +77,9 @@ class TicTacToe {
   addCellClickListener() {
     const cells = this.rootElement.querySelectorAll('.board__cell')
     cells.forEach((cell) => {
-      cell.addEventListener('click', e => this.handleMakeMove(e))
+      cell.addEventListener('click', (e) => {
+        void this.handleMakeMove(e)
+      })
     })
   }
 
@@ -91,8 +93,8 @@ class TicTacToe {
   }
 
   async handleMakeMove(event: Event) {
-    // @ts-expect-error fix it
-    const currentCell = parseInt(event.currentTarget!.firstElementChild!.dataset.id)
+    const cellElement = (event.currentTarget as HTMLElement).firstElementChild! as HTMLElement
+    const currentCell = parseInt(cellElement.dataset.id!, 10)
     const cellToAddToken = document.querySelector<HTMLElement>(`[data-id='${currentCell}']`)
 
     if (!cellToAddToken) {
@@ -154,8 +156,7 @@ class TicTacToe {
         const cells = document.querySelectorAll<HTMLDivElement>('.board__cell')
 
         cells.forEach((cell) => {
-          // @ts-expect-error fix it
-          const cellId = cell.firstElementChild!.dataset.id
+          const cellId = parseInt((cell.firstElementChild as HTMLElement).dataset.id!, 10)
 
           if (cellId == cell1 || cellId == cell2 || cellId == cell3) {
             cell.classList.add('board__cell--winner')
@@ -216,14 +217,18 @@ class TicTacToe {
   removeCellClickListener() {
     const allCells = this.rootElement.querySelectorAll('.board__cell')
     allCells.forEach((cell) => {
-      cell.removeEventListener('click', e => this.handleMakeMove(e))
+      cell.removeEventListener('click', (e) => {
+        void this.handleMakeMove(e)
+      })
     })
   }
 
   start() {
     this.rootElement.innerHTML = html()
     const addPlayerForm = this.rootElement.querySelector<HTMLFormElement>('.player-form')
-    addPlayerForm!.addEventListener('submit', e => this.handleAddPlayers(e))
+    addPlayerForm!.addEventListener('submit', (e) => {
+      void this.handleAddPlayers(e)
+    })
     //
     const replayButton = this.rootElement.querySelector<HTMLButtonElement>('.replay-btn')
     replayButton!.addEventListener('click', () => this.handleResetBoard())

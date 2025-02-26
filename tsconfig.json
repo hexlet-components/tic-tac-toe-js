@@ -12,6 +12,7 @@
     "skipLibCheck": true,
     /* Bundler mode */
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "allowImportingTsExtensions": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -26,7 +27,10 @@
     "declaration": true
   },
   "include": [
-    "src/**/*",
-    // "vitest.setup.ts"
+    "src",
+    "__tests__",
+    "vitest.setup.ts",
+    "vite.config.ts",
+    "eslint.config.ts",
   ],
 }
