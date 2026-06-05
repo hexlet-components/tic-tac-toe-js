@@ -3,11 +3,7 @@
     "target": "ES2020",
     "useDefineForClassFields": true,
     "module": "NodeNext",
-    "lib": [
-      "ES2020",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "inlineSourceMap": true,
     "skipLibCheck": true,
     /* Bundler mode */
@@ -26,11 +22,5 @@
     "outDir": "dist",
     "declaration": true
   },
-  "include": [
-    "src",
-    "__tests__",
-    "vitest.setup.ts",
-    "vite.config.ts",
-    "eslint.config.ts",
-  ],
+  "include": ["src", "__tests__", "vitest.setup.ts", "vite.config.ts"]
 }

@@ -60,5 +60,5 @@ export default () => {
     <button class="replay-btn" value="replay">
       <span class="clear-board">Clear Board</span>
     </button>
-  </div>`
-}
+  </div>`;
+};
