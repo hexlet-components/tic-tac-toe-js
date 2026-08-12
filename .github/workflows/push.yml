@@ -29,14 +29,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
+      # pnpm ставится до setup-node: тот с cache: pnpm ищет уже существующий
+      # бинарь, чтобы вычислить путь к store.
+      - uses: pnpm/action-setup@v6
       - name: Set up Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '26.x'
-          cache: 'npm'
+          cache: pnpm
       - name: Install dependencies
-        run: npm ci
+        run: make install
       - run: make build-pages
       - run: make lint
       - run: make test
