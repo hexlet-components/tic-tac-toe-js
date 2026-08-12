@@ -1,4 +1,15 @@
 # Tic Tac Toe
+
+## Зачем это нужно
+
+Крестики-нолики как готовый компонент: игра встраивается в любой элемент
+страницы и дальше живёт сама.
+
+Публикуется пакетом `@hexlet/tic-tac-toe` и используется как подопытный в
+курсе по Testing Library: у игры есть подписи, роли и `data-testid`, поэтому
+на ней удобно показывать тесты интерфейса. Пример таких тестов —
+[dom-testing-library-example](https://github.com/hexlet-components/dom-testing-library-example).
+
 ## Tic Tac Toe Game using JS
 
 ## Synopsis
