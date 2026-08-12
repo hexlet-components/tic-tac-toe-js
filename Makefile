@@ -1,23 +1,24 @@
 dev:
-	npm run dev
+	pnpm run dev
 
 build:
-	npm run build
+	pnpm run build
 
 build-pages:
-	npm run build:pages
+	pnpm run build:pages
 
 test:
-	npm run test
+	pnpm run test
 
 lint:
-	npm run lint
+	pnpm run lint
+	pnpm --silent run format:check
 
 test-watch:
-	npx vitest
+	pnpm exec vitest
 
 test-preview:
-	npm run test-preview
+	pnpm run test-preview
 
-release:
-	npx release-it
+install:
+	pnpm install
