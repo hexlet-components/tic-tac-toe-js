@@ -14,10 +14,6 @@
       "import": "./dist/public/*.css"
     }
   },
-  "simple-git-hooks": {
-    "pre-commit": "make lint",
-    "pre-push": "make test"
-  },
   "scripts": {
     "dev": "vite",
     "lint": "oxlint --config=.oxlintrc.json .",
@@ -34,10 +30,10 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/user-event": "^14.6.1",
+    "lefthook": "^2.1.10",
     "nock": "^14.0.1",
     "oxfmt": "^0.63.0",
     "oxlint": "^1.78.0",
-    "simple-git-hooks": "^2.11.1",
     "typescript": "^5.7.3",
     "vite": "^6.2.0",
     "vitest": "^3.0.7",
