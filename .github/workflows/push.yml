@@ -30,14 +30,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-      # pnpm ставится до setup-node: тот с cache: pnpm ищет уже существующий
-      # бинарь, чтобы вычислить путь к store.
-      - uses: pnpm/action-setup@v6
-      - name: Set up Node
-        uses: actions/setup-node@v7
-        with:
-          node-version: '26.x'
-          cache: pnpm
+      - uses: jdx/mise-action@v5
       - name: Install dependencies
         run: make install
       - run: make build-pages
