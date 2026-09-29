@@ -30,7 +30,6 @@
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/user-event": "^14.6.6",
-    "lefthook": "^2.1.12",
     "nock": "^14.0.17",
     "oxfmt": "^0.65.0",
     "oxlint": "^1.80.0",
