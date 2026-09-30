@@ -22,9 +22,9 @@
     "build:pages": "vite build",
     "build": "rm -rf dist && tsc --build && cp -r public dist/",
     "preview": "vite preview",
-    "lint:fix": "oxfmt --ignore-path=.oxfmtignore . && oxlint --fix .",
-    "format": "oxfmt --ignore-path=.oxfmtignore .",
-    "format:check": "oxfmt --ignore-path=.oxfmtignore --check ."
+    "lint:fix": "oxfmt . && oxlint --fix .",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check ."
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.1",
